@@ -7,9 +7,11 @@
  */
 int main(int argc, char **argv)
 {
+  printf("Start of main");
   // Parse command line
   char *path = ".";
-  if (argc > 0)
+  printf("%d", argc);
+  if (argc == 1)
   {
     path = argv[0];
   }
@@ -26,6 +28,7 @@ int main(int argc, char **argv)
     file_name = file_info->d_name;
     stat(file_name, &size_buf);
     printf("%10lld  %s\n", (long long int) size_buf.st_size, file_name);
+    // printf("%s\n", file_name);
   }
 
   // Close directory
