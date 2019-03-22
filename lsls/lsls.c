@@ -1,20 +1,20 @@
 #include <stdio.h>
 #include <dirent.h>
 #include <sys/stat.h>
+#include <stdlib.h>
 
 /**
  * Main
  */
 int main(int argc, char **argv)
 {
-  printf("Start of main");
   // Parse command line
   char *path = ".";
-  printf("%d", argc);
-  if (argc == 1)
+  if (argc > 1)
   {
-    path = argv[0];
+    path = argv[1];
   }
+  
 
   // Open directory
   DIR *dir_ptr = opendir(path);
